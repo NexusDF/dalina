@@ -10,9 +10,12 @@ body {
 
 .container {
   display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  animation: slide 2s forwards;
+  animation-delay: 1s;
 }
 
 .title {
@@ -20,6 +23,31 @@ body {
   display: flex;
   align-items: center;
   gap: 0.9rem;
+}
+
+.sign {
+  animation-duration: 2s;
+  animation-name: pump;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes pump {
+  0% {
+    font-size: 1em;
+  }
+  50% {
+    font-size: 1.5em;
+  }
+  100% {
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 768px) {
